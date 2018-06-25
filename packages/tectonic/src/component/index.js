@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Manager from '../manager';
 
 /**
@@ -11,14 +12,13 @@ import Manager from '../manager';
  * resolves these queries via `resolvers`.
  */
 export default class Loader extends Component {
-
   static propTypes = {
-    children: React.PropTypes.node.isRequired,
-    manager: React.PropTypes.instanceOf(Manager).isRequired,
+    children: PropTypes.node.isRequired,
+    manager: PropTypes.instanceOf(Manager).isRequired,
   }
 
   static childContextTypes = {
-    manager: React.PropTypes.instanceOf(Manager),
+    manager: PropTypes.instanceOf(Manager),
   }
 
   getChildContext() {

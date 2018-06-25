@@ -39,7 +39,9 @@ const warn = (...args) => {
  */
 export default class BaseResolver {
   // cache and store are set from the manager
-  cache: Object // TODO: Cache flow type
+  cache: Object
+
+  // TODO: Cache flow type
   store: Object
 
   // This query chain is a series of functions which need to return true in order
@@ -370,7 +372,7 @@ export default class BaseResolver {
     //
     // This is dumb. You should make a smarter one.
     const sd = Array.from(sourceMap.values()).find(
-      sourceDef => this.satisfiabilityChain.every(i => i(sourceDef, query) === true)
+      sourceDef => this.satisfiabilityChain.every(i => i(sourceDef, query) === true),
     );
 
     if (sd === undefined) {
@@ -477,5 +479,4 @@ export default class BaseResolver {
     }
     return new Date();
   }
-
 }

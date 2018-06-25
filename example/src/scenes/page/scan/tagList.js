@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Scan from '../../../models/scan.js';
 import Tag from '../../../components/tag/tag.js';
 import AddTag from './addTag.js';
@@ -11,7 +12,7 @@ const TagList = ({ scan }) => (
 );
 
 TagList.propTypes = {
-  scan: React.PropTypes.instanceOf(Scan),
+  scan: PropTypes.instanceOf(Scan),
 };
 
 export default TagList;

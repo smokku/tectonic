@@ -69,9 +69,9 @@ to the decorator (see <a href="https://github.com/tonyhb/tectonic/issues/35">#35
 self-contained component:</p>
 
 <pre><code>@load()
-class MyPoller extends React.Component {
+class MyPoller extends Component {
   static propTypes = {
-    load: React.PropTypes.func,
+    load: PropTypes.func,
   }
 
   state = {

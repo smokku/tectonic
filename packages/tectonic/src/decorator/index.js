@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Map } from 'immutable';
 import d from 'debug';
@@ -31,17 +32,17 @@ export default function load(loadQueries: { [key: string]: Query } | Function = 
   // 4. Take result of thunk and transform into an array (if it's not already)
   // 5. Iterate through array and figure out how to call and load data
 
-  return (WrappedComponent: Class<React$Component<*, *, *>>) => {
+  return (WrappedComponent: Class<Component<*, *, *>>) => {
     class TectonicComponent extends Component {
       static WrappedComponent = WrappedComponent
 
       static propTypes = {
         // State is all redux state
-        state: React.PropTypes.instanceOf(Map),
+        state: PropTypes.instanceOf(Map),
       }
 
       static contextTypes = {
-        manager: React.PropTypes.instanceOf(Manager),
+        manager: PropTypes.instanceOf(Manager),
       }
 
       /**
@@ -53,6 +54,7 @@ export default function load(loadQueries: { [key: string]: Query } | Function = 
        */
       // eslint-disable-next-line react/sort-comp
       queries: { [key: string]: Query } = {}
+
       inspector: PropInspector
 
       constructor(...args) {

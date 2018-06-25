@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import css from 'react-css-modules';
 import { Link } from 'react-router';
 import styles from './base.css';
@@ -13,7 +14,7 @@ const UnstyledBase = ({ children }) => (
 );
 
 UnstyledBase.propTypes = {
-  children: React.PropTypes.node,
+  children: PropTypes.node,
 };
 
 export default css(styles)(UnstyledBase);

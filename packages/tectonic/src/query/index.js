@@ -37,7 +37,6 @@ export type QueryOpts = {
  * the resolver's responsibility to identify which sources satisfy the query.
  */
 export default class Query {
-
   /**
    * When resolved we set the query's sourceDefinition property for tracking.
    */
@@ -92,17 +91,25 @@ export default class Query {
   _force: boolean = false
 
   model: Class<Model>
+
   modelId: ?Id
+
   queryType: QueryType
+
   returnType: ?ReturnType
+
   body: any
+
   // params contains both required and optional params
   params: ParamsType = {}
+
   // TODO: ReturnsNoFields, for deletes. This shouldn't be "undefined"
   fields: Array<string> | ReturnsAllFields
+
   returnedIds: Set<any>
 
   children: Array<Query>
+
   callback: ?Function
 
   /**
@@ -117,7 +124,9 @@ export default class Query {
    * @param object Body to be sent in request, used for POST, PUT etc.
    * @param mixed  ID of the model instance for UPDATE and DELETE queries
    */
-  constructor({ model, fields, queryType = GET, returnType, params, body, callback, modelId }: QueryOpts = {}) {
+  constructor({
+    model, fields, queryType = GET, returnType, params, body, callback, modelId,
+  }: QueryOpts = {}) {
     if (model instanceof Model) {
       this.modelId = (model: Object)[model.constructor.idField];
       this.model = model.constructor;
@@ -181,12 +190,12 @@ export default class Query {
       returnType = '';
     }
 
-    return `Query(Model: ${this.model.modelName}, ` +
-      `Fields: ${fields}, ` +
-      `Params: ${JSON.stringify(this.params)}, ` +
-      `Body: ${JSON.stringify(this.body)}, ` +
-      `QueryType: ${this.queryType}), ` +
-      `ReturnType: ${returnType})`;
+    return `Query(Model: ${this.model.modelName}, `
+      + `Fields: ${fields}, `
+      + `Params: ${JSON.stringify(this.params)}, `
+      + `Body: ${JSON.stringify(this.body)}, `
+      + `QueryType: ${this.queryType}), `
+      + `ReturnType: ${returnType})`;
   }
 
   /**
@@ -227,5 +236,4 @@ export default class Query {
   force() {
     this._force = true;
   }
-
 }

@@ -1,4 +1,5 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import load, { Status } from 'tectonic';
 import Loading from '../../../components/loading/loading';
 import ScanComponent from './scan';

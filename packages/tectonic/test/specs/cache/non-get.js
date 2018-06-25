@@ -43,7 +43,7 @@ describe('cache for non-GET requests', () => {
       const [data, ok] = cache.getQueryData(query, store.getState().tectonic);
       // Ensure cachedQueryIds was never called.
       assert.isFalse(spy.called);
-      spy.reset();
+      spy.resetHistory();
       // Assert that the tuple returned [undefined, false]
       assert.isFalse(ok);
       assert.isUndefined(data);

@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import css from 'react-css-modules';
 import styles from './base.css';
@@ -21,6 +22,6 @@ const Base = ({ children }) => (
   </div>
 );
 
-Base.propTypes = { children: React.PropTypes.node };
+Base.propTypes = { children: PropTypes.node };
 
 export default css(styles)(Base);

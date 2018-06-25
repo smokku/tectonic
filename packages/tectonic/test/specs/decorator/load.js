@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { assert } from 'chai';
 import sinon from 'sinon';
 import { renderAndFind } from '../../utils';
@@ -44,9 +45,9 @@ describe('@load decorators .load prop', () => {
       },
     ]);
 
-    class A extends React.Component {
+    class A extends Component {
       static propTypes = {
-        user: React.PropTypes.instanceOf(User),
+        user: PropTypes.instanceOf(User),
       }
 
       loadPosts() {

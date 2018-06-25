@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import css from 'react-css-modules';
 import Page from '../../models/page.js';
@@ -7,7 +8,7 @@ import styles from './header.css';
 @css(styles)
 export default class PageHeader extends PureComponent {
   static propTypes = {
-    page: React.PropTypes.instanceOf(Page),
+    page: PropTypes.instanceOf(Page),
   }
 
   render() {

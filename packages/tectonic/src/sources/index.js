@@ -14,7 +14,6 @@ import SourceDefinition from './definition';
  * }
  */
 export default class Sources {
-
   /**
    * This stores a map of SourceDefinition instances keyed by
    * SourceDefinition.id
@@ -54,5 +53,4 @@ export default class Sources {
       }
     });
   }
-
 }

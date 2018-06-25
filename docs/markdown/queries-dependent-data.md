@@ -21,7 +21,7 @@ const queryFunc = (props) => ({
 });
 
 @load(queryFunc)
-class MyComponent extends React.Component {
+class MyComponent extends Component {
   // ...
 }
 ```

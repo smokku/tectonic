@@ -38,10 +38,15 @@ export type SourceDefinitionOpts = {
  */
 export default class SourceDefinition {
   id: string
+
   meta: Object
+
   providers: ProviderGroup
+
   model: Array<Class<Model>>
+
   driverFunc: Function
+
   queryType: QueryType
 
   cacheFor: ?number
@@ -51,12 +56,14 @@ export default class SourceDefinition {
    * These can be query parameters, postdata or parameters for URL replacement.
    */
   params: ParamsType
+
   _paramNames: Array<string>
 
   /**
    * Object of optional parameters for the source (where values are defaults)
    */
   optionalParams: ParamsType
+
   _optionalParamNames: Array<string>
 
   /**
@@ -94,8 +101,8 @@ export default class SourceDefinition {
 
     if (typeof returns === 'function') {
       throw new Error(
-        'You must pass a concrete return value or object to `returns` ' +
-        '(such as Model.item())'
+        'You must pass a concrete return value or object to `returns` '
+        + '(such as Model.item())',
       );
     }
 
@@ -216,17 +223,16 @@ export default class SourceDefinition {
     if (this.queryType === 'GET' && this.providers.returnsNone) {
       throw new Error('Source definitions must contain `returns` key for GET queries', this);
     }
-    return;
   }
 
   validateQueryType = () => {
     const { queryType } = this;
-    if (queryType !== GET && queryType !== CREATE &&
-        queryType !== UPDATE && queryType !== DELETE) {
+    if (queryType !== GET && queryType !== CREATE
+        && queryType !== UPDATE && queryType !== DELETE) {
       throw new Error(
-          'You must specify the type of query using one of GET, CREATE, ' +
-          'UPDATE or DELETE'
-        );
+        'You must specify the type of query using one of GET, CREATE, '
+          + 'UPDATE or DELETE',
+      );
     }
   }
 }
@@ -249,4 +255,3 @@ export function assignDefaultParams(source: SourceDefinition, queryParams: Param
 
   return { ...copy };
 }
-

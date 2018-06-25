@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CH from 'color-hash';
 import css from 'react-css-modules';
 import styles from './tag.css';
@@ -24,9 +25,9 @@ const Tag = ({ tag, deletable = false, onDelete }) => {
 };
 
 Tag.propTypes = {
-  tag: React.PropTypes.string,
-  deletable: React.PropTypes.bool,
-  onDelete: React.PropTypes.func,
+  tag: PropTypes.string,
+  deletable: PropTypes.bool,
+  onDelete: PropTypes.func,
 };
 
 export default css(styles, { allowMultiple: true })(Tag);

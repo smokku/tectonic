@@ -11,9 +11,10 @@ export type StatusOpts = {
 }
 
 export default class Status {
-
   status: ?StatusType
+
   code: ?number
+
   error: ?string
 
   constructor({ status, code, error }: StatusOpts = {}) {
@@ -40,5 +41,4 @@ export default class Status {
   isUndefinedParams() {
     return this.status === 'UNDEFINED_PARAMS';
   }
-
 }

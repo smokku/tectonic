@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { reduxForm } from 'redux-form';
 import css from 'react-css-modules';
 import styles from './newPost.css';
@@ -22,10 +23,10 @@ export default class NewPost extends Component {
   static propTypes = {
     // tectonic
     user: User.instanceOf,
-    createModel: React.PropTypes.func,
+    createModel: PropTypes.func,
     // redux-form
-    form: React.PropTypes.object,
-    handleSubmit: React.PropTypes.func
+    form: PropTypes.object,
+    handleSubmit: PropTypes.func
   }
 
   onSubmit(data) {

@@ -46,7 +46,7 @@ describe('props.createModel', () => {
 
     it('should pass a Query model with queryType of "CREATE" into the resolver', () => {
       const m = createNewManager();
-      const stub = sinon.stub(m, 'addQuery', (query) => {
+      const stub = sinon.stub(m, 'addQuery').callsFake((query) => {
         assert.equal(query.queryType, CREATE)
       });
       const item = renderAndFind(<Wrapped />, Basic, m);

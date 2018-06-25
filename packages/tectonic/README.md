@@ -54,7 +54,8 @@ to get to the juicy part. Which is declaratively asking for data!
 Check it out (I'll tell you what's going on after):
 
 ```js
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import load, { Status } from 'tectonic';
 import { User, Post } from './models.js'; // your models
 const { instanceOf, arrayOf, shape, string } = PropTypes;

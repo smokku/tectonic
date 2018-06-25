@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import css from 'react-css-modules';
 import styles from './content.css';
 
@@ -9,7 +10,7 @@ const Content = ({ children }) => (
 );
 
 Content.propTypes = {
-  children: React.PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default css(styles)(Content);

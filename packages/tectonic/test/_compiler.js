@@ -1,4 +1,4 @@
-var compile = require("babel-register");
+var compile = require("@babel/register");
 
 module.exports = function() {
   return compile.apply(this, {

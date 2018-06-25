@@ -36,8 +36,8 @@ type Accessor = {
  *
  */
 export default class PropInspector {
-
   queryFunc: Function
+
   accessor: Accessor
 
   constructor({ queryFunc }: ConstructorOpts) {
@@ -167,5 +167,4 @@ export default class PropInspector {
 
     return queryMap;
   }
-
 }

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import {
   Field,
   reduxForm,
@@ -20,17 +21,17 @@ import styles from './settings.css';
 @css(styles)
 export default class PageSettings extends PureComponent {
   static propTypes = {
-    page: React.PropTypes.instanceOf(Page),
+    page: PropTypes.instanceOf(Page),
     // tectonic
-    updateModel: React.PropTypes.func,
+    updateModel: PropTypes.func,
     // redux-form
-    fields: React.PropTypes.shape({
-      // url: React.PropTypes.string,
-      // name: React.PropTypes.string,
-      threshold: React.PropTypes.string,
+    fields: PropTypes.shape({
+      // url: PropTypes.string,
+      // name: PropTypes.string,
+      threshold: PropTypes.string,
     }),
-    handleSubmit: React.PropTypes.func,
-    change: React.PropTypes.func,
+    handleSubmit: PropTypes.func,
+    change: PropTypes.func,
   }
 
   onSubmit = () => {

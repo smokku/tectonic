@@ -20,13 +20,15 @@ import type {
  *
  */
 export default class Provider {
-
   // Whether this will return an item, list, or nothing
   returnType: ReturnType
+
   // The model this returns
   model: Class<Model>
+
   // Whether this returns all fields or a subset of fields
   fields: ReturnsAllFields | Array<string>
+
   // Stores all field names as a key within an object.
   fieldsAsObject: { [key: string]: boolean } = {}
 
@@ -62,5 +64,4 @@ export default class Provider {
     // Finally set the fields that this source returns
     this.fields = fields;
   }
-
 }

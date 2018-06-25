@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-const { object } = React.PropTypes;
+import PropTypes from 'prop-types';
 import load from 'tectonic';
 
 import * as models from 'models';
@@ -12,8 +12,8 @@ import * as models from 'models';
 })
 export default class Home extends Component {
   static propTypes = {
-    status: object,
-    user: object
+    status: PropTypes.object,
+    user: PropTypes.object
   }
 
   render() {

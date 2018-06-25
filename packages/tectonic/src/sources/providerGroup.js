@@ -16,7 +16,6 @@ type ProviderDefinition = {
  * model's data.
  */
 export default class ProviderGroup {
-
   returnsNone: boolean = false
 
   defs: Array<ProviderDefinition> = []
@@ -36,7 +35,7 @@ export default class ProviderGroup {
       if (!(defs[key] instanceof Provider)) {
         throw new Error(
           'Source definition must be comrpised of models, such as Model.list()',
-          defs[key]
+          defs[key],
         );
       }
 
@@ -45,7 +44,6 @@ export default class ProviderGroup {
         provider: defs[key],
       };
     });
-    return;
   }
 
   isPolymorphic(): boolean {
@@ -72,5 +70,4 @@ export default class ProviderGroup {
       .defs
       .map(r => r.provider.model);
   }
-
 }

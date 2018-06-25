@@ -1,5 +1,7 @@
-import { jsdom } from 'jsdom'
+import { JSDOM } from 'jsdom'
+import 'raf/polyfill';
 
-global.document = jsdom('<!doctype html><html><body></body></html>')
-global.window = document.defaultView
+const DOM = new JSDOM('<!doctype html><html><body></body></html>')
+global.window = DOM.window
+global.document = global.window.document
 global.navigator = global.window.navigator

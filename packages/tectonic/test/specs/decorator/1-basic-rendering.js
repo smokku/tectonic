@@ -3,7 +3,7 @@
 import { assert } from 'chai';
 import React, { Component } from 'react';
 import load from '../../../src/decorator';
-import TestUtils from 'react-addons-test-utils';
+import TestUtils from 'react-dom/test-utils';
 import {
   renderAndFind,
 } from '../../utils';

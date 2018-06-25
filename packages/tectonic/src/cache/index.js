@@ -32,7 +32,6 @@ import type {
  * TODO: custom cache rules and predicates
  */
 export default class Cache {
-
   /**
    * store holds a reference to the redux store
    */
@@ -328,7 +327,7 @@ export default class Cache {
     // This returns many items in a list; iterate through all of the returned
     // IDs and fetch our data
     const data = Array.from(returnedIds).map(
-      id => this.processCachedModelMap(state.getIn(['data', modelName, id]))
+      id => this.processCachedModelMap(state.getIn(['data', modelName, id])),
     );
 
     if (data.some(item => item === false)) {
@@ -386,5 +385,4 @@ export default class Cache {
   hasQueryExpired(query: Query, state: Map<*, *>): boolean {
     return state.getIn(['queriesToExpiry', query.hash()], 0) < new Date();
   }
-
 }

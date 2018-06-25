@@ -160,7 +160,7 @@ export default class Model {
     if (missing.length > 0) {
       throw new Error(
         `All fields must be defined within your model. Missing: ${
-        missing.join(', ')}`
+          missing.join(', ')}`,
       );
     }
   }

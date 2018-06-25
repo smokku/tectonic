@@ -1,4 +1,5 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Match } from 'react-router';
 import load, { Status } from 'tectonic';
 import ui from 'redux-ui';
@@ -31,7 +32,7 @@ export default class PageComponent extends PureComponent {
     params: PropTypes.shape({
       pageId: PropTypes.string,
     }),
-    page: React.PropTypes.instanceOf(Page),
+    page: PropTypes.instanceOf(Page),
     status: PropTypes.shape({
       page: PropTypes.instanceOf(Status),
     }),

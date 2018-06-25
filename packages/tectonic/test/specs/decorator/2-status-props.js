@@ -1,8 +1,9 @@
 'use strict';
 
 import { assert } from 'chai';
-import React, { Component, PropTypes } from 'react';
-import TestUtils from 'react-addons-test-utils';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import TestUtils from 'react-dom/test-utils';
 import { renderAndFind } from '../../utils';
 
 import Status from '../../../src/status/status';

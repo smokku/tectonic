@@ -1,10 +1,9 @@
 {
-  "presets": ["es2015", "react", "stage-0"],
-  "plugins": [
-    "syntax-decorators",
-    "transform-decorators-legacy",
-    "transform-flow-strip-types",
-    "transform-decorators-legacy"
+  "presets": [
+    "@babel/preset-flow",
+    "@babel/preset-es2015",
+    "@babel/preset-react",
+    ["@babel/preset-stage-0", { "decoratorsLegacy": true }]
   ],
   "sourceRoot": "."
 }

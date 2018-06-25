@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import ui from 'redux-ui';
 import css from 'react-css-modules';
@@ -124,8 +125,8 @@ const ScanComponent = ({ page, scan }) => (
 );
 
 ScanComponent.propTypes = {
-  page: React.PropTypes.instanceOf(Page),
-  scan: React.PropTypes.instanceOf(Scan),
+  page: PropTypes.instanceOf(Page),
+  scan: PropTypes.instanceOf(Scan),
 };
 
 export default ScanComponent;

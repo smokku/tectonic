@@ -48,11 +48,14 @@ export type ManagerOpts = {
  *
  */
 export default class Manager {
-
   store: Object
+
   cache: Object
+
   resolver: Object
+
   drivers: Object
+
   sources: Sources
 
   constructor({ store, drivers, resolver }: ManagerOpts = {}) {
@@ -81,8 +84,7 @@ export default class Manager {
       const driverFunc = drivers[driver];
       // When calling the driver name run processDefinitions to add the
       // definitions to the Source class.
-      (this: Object).drivers[driver] = defs =>
-        this.sources.processDefinitions(driverFunc, defs, this.resolver);
+      (this: Object).drivers[driver] = defs => this.sources.processDefinitions(driverFunc, defs, this.resolver);
     });
   }
 
@@ -176,5 +178,4 @@ export default class Manager {
 
     return props;
   }
-
 }

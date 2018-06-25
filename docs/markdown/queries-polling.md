@@ -10,9 +10,9 @@ self-contained component:
 
 ```
 @load()
-class MyPoller extends React.Component {
+class MyPoller extends Component {
   static propTypes = {
-    load: React.PropTypes.func,
+    load: PropTypes.func,
   }
 
   state = {
